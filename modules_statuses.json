@@ -1,0 +1,15 @@
+{
+    "Admin": true,
+    "Auth": true,
+    "Banner": true,
+    "Comment": true,
+    "ContactUs": true,
+    "Menu": true,
+    "Permission": true,
+    "Role": true,
+    "Post": true,
+    "PostCategory": true,
+    "Setting": true,
+    "Slide": true,
+    "User": true
+}
