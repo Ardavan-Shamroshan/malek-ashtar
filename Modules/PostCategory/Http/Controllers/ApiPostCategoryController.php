@@ -7,6 +7,8 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\PostCategory\Entities\PostCategory;
 use Modules\PostCategory\Http\Requests\PostCategoryRequest;
+use Modules\PostCategory\Transformers\PostCategoryResource;
+use Modules\PostCategory\Transformers\PostCategoryCollection;
 
 class ApiPostCategoryController extends Controller
 {
@@ -15,8 +17,15 @@ class ApiPostCategoryController extends Controller
      * @return Response
      */
     public function index() {
+        // return 10 post categories per page where has active status (status = 1) using PostCategory collection
+        return new PostCategoryCollection(PostCategory::all());
+
+        // return 10 post categories per page where has active status (status = 1) using PostCategory resource
+//        return new PostCategoryResource(PostCategory::query()->find(1));
+
+
         // return 10 post categories per page where has active status (status = 1)
-        return PostCategory::query()->status()->paginate(10);
+//        return PostCategory::query()->status()->paginate(10);
     }
 
     /**

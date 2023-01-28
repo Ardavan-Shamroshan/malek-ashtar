@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\PostCategory\Transformers;
+namespace Modules\Comment\Transformers;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PostCategory extends JsonResource
+class CommentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

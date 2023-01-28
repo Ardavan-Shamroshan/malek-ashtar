@@ -4,7 +4,7 @@ namespace Modules\Post\Transformers;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Post extends JsonResource
+class PostResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
