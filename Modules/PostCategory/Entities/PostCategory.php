@@ -42,14 +42,21 @@ class PostCategory extends Model
 
 
     /**
-     * Filter
+     * Scopes
      */
+    // filter
     public function scopeFilter(Builder $builder, $request): Builder {
         return (new PostCategoryFilter($request))->filter($builder);
     }
 
+    // status = 1
+    public function scopeStatus($query) {
+        $query->where('status', 1);
+    }
+
+
     /**
-     * relations
+     * Relations
      */
     // category parent
     public function parent() {
