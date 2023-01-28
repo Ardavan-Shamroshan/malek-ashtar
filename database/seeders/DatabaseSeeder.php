@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Modules\PostCategory\Database\Seeders\PostCategoryDatabaseSeeder;
 use Modules\Setting\Database\Seeders\SettingDatabaseSeeder;
 use Modules\User\Database\Seeders\UserDatabaseSeeder;
 
@@ -27,7 +28,8 @@ class DatabaseSeeder extends Seeder
             // call roles and permissions seeder
             RolesAndPermissionsSeeder::class,
             UserDatabaseSeeder::class,
-            SettingDatabaseSeeder::class
+            SettingDatabaseSeeder::class,
+            PostCategoryDatabaseSeeder::class
         ]);
     }
 }
