@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Modules\Admin\Entities\Notification;
+use Modules\Post\Database\factories\PostFactory;
+use Modules\Post\Entities\Post;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot() {
+//        dd(Post::factory()->create());
 //        Auth::loginUsingId(1);
 
 

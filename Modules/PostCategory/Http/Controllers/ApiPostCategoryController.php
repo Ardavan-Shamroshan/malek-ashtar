@@ -21,11 +21,11 @@ class ApiPostCategoryController extends Controller
         return new PostCategoryCollection(PostCategory::all());
 
         // return 10 post categories per page where has active status (status = 1) using PostCategory resource
-//        return new PostCategoryResource(PostCategory::query()->find(1));
+        // return new PostCategoryResource(PostCategory::query()->find(1));
 
 
         // return 10 post categories per page where has active status (status = 1)
-//        return PostCategory::query()->status()->paginate(10);
+        // return PostCategory::query()->status()->paginate(10);
     }
 
     /**

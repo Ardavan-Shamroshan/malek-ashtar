@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use Modules\Post\Http\Controllers\ApiPostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/post', function (Request $request) {
     return $request->user();
 });
+
+
+// post api resource
+Route::apiResource('post', ApiPostController::class);
+

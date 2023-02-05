@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/postcategory', function (Request $request) 
 
 // PostCategory api resource
 Route::apiResource('postcategory', ApiPostCategoryController::class);
+
