@@ -55,7 +55,6 @@ class ApiPostCategoryController extends Controller
      * @return Response
      */
     public function update(Request $request, $id) {
-
         $inputs = $request->all();
         $postcategory = PostCategory::query()->findOrFail($id);
         return $postcategory->update($inputs);

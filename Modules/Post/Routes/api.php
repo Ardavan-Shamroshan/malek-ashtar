@@ -15,6 +15,12 @@ use Modules\Post\Http\Controllers\ApiPostController;
 |
 */
 
+Route::fallback(static function () {
+    return response()->json([
+        'message' => 'NOT FOUND'
+    ], 404);
+});
+
 Route::middleware('auth:api')->get('/post', function (Request $request) {
     return $request->user();
 });

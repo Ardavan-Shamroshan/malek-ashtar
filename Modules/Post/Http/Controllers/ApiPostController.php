@@ -15,8 +15,7 @@ class ApiPostController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
-    {
+    public function index() {
         // 1. Get all posts with comments (load comments relation)
         // return new PostCollection(Post::query()->with('comments')->get());
 
@@ -30,9 +29,10 @@ class ApiPostController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        dd('api/store');
+        $inputs = $request->all();
+        return Post::query()->create($inputs);
     }
 
     /**
@@ -40,9 +40,8 @@ class ApiPostController extends Controller
      * @param int $id
      * @return Response
      */
-    public function show($id)
-    {
-        //
+    public function show($id) {
+        return Post::query()->findOrFail($id);
     }
 
     /**
@@ -51,18 +50,29 @@ class ApiPostController extends Controller
      * @param int $id
      * @return Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id) {
+        $inputs = $request->all();
+        $post = Post::query()->findOrFail($id);
+        return $post->update($inputs);
     }
+
 
     /**
      * Remove the specified resource from storage.
      * @param int $id
      * @return Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id) {
+//        dd('api/destroy');
+        $post = Post::query()->findOrFail($id)->delete();
+//        return response(
+//            'Success', 200
+//        )->header('Content-Type', 'text/plain');
+
+        return response()->json([
+            'status' => 200,
+            'message' => 'Success',
+            'post' => $post
+        ]);
     }
 }
